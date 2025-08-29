@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component,HostListener } from '@angular/core';
 import { ServicesComponentComponent } from '@components/services-component/services-component.component';
 import { FooterComponent } from "@shared/common/footer/footer.component";
+import { ContactComponent } from "@components/contact/contact.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ServicesComponentComponent, CommonModule, FooterComponent],
+  imports: [ServicesComponentComponent, CommonModule, FooterComponent, ContactComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
