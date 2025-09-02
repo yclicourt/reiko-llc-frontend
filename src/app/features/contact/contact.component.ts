@@ -9,6 +9,8 @@ import {
 import { CommonModule } from '@angular/common';
 import { LoadingComponent } from '@shared/common/loading/loading.component';
 import { ContactService } from '@shared/common/services/contact.service';
+import { firstValueFrom } from 'rxjs';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-contact',
   standalone: true,
@@ -29,7 +31,8 @@ export class ContactComponent {
   loading = false;
 
   // Inject Services
-  contactService = inject(ContactService)
+  contactService = inject(ContactService);
+  private toastr = inject(ToastrService);
 
   constructor() {
     this.name = new FormControl('', Validators.required);
@@ -50,21 +53,27 @@ export class ContactComponent {
   }
 
   // Method to contact me
-  contactMe() {
-    this.loading=true;
-    if(this.contactForm.invalid) return;
+  async contactMe() {
+    this.loading = true;
+    if (this.contactForm.valid) {
+      const formData = new FormData();
 
-
-    this.contactService.sendMessage(this.contactForm.value).subscribe({
-
-      next:(res)=>{
-        console.log('Prueba....',res)
-      },
-      error:(err)=>{
-        console.error('Error al enviar el mensaje',err)
+      try {
+        await firstValueFrom(this.contactService.sendMessage(formData));
+        this.toastr.success('Message sent successfully');
+        this.contactForm.reset();
+      } catch (error: any) {
+        this.loading = false;
+        console.log('Error sendind message', error);
+        this.toastr.error(
+          error.error?.message ||
+            'Error sending message, please try again later'
+        );
       }
-    })
-    this.loading=false;
+    } else {
+      this.toastr.warning('Please fill all required fields correctly');
+      this.contactForm.markAllAsTouched();
+    }
   }
 
   // Method to check if a field has errors
