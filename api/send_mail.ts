@@ -27,7 +27,7 @@ export default async function handler(
     }
 
     await resend.emails.send({
-      from: 'yoyo010507032109@gmail.com',
+      from: `${email}`,
       to: 'yclicourt@gmail.com',
       subject: 'Nuevo mensaje de contacto',
       html: `
