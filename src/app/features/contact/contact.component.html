@@ -124,6 +124,30 @@
             }
           </div>
         </div>
+        <div class="md:flex items-center mt-8">
+          <div class="w-full flex flex-col">
+            <label class="font-semibold leading-none text-gray-300"
+              >Subject</label
+            >
+            <input
+              type="text"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded"
+              placeholder="Subject"
+              formControlName="subject"
+              [ngClass]="{
+                'is-invalid ':
+                  hasErrors('subject', 'required') ||
+                  hasErrors('subject', 'subject')
+              }"
+            />
+            @if (hasErrors('subject','required')) {
+
+            <span class="text-red-500 font-sans"
+              >"Subject should not be empty"</span
+            >
+            }
+          </div>
+        </div>
         <div>
           <div class="w-full flex flex-col mt-8">
             <label class="font-semibold leading-none text-gray-300"
@@ -146,7 +170,6 @@
             }
           </div>
         </div>
-        <!-- <app-loading/> -->
         <div *ngIf="loading" class="text-center">
           <div class="inline-flex items-center justify-center">
             <svg
@@ -174,7 +197,7 @@
         </div>
         <div class="flex items-center justify-center w-full">
           <button
-          *ngIf="!loading"
+            *ngIf="!loading"
             class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none"
             (click)="contactMe()"
           >
