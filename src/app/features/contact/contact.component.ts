@@ -64,6 +64,7 @@ export class ContactComponent {
         await firstValueFrom(this.contactService.sendMessage(formValue));
         this.toastr.success('Message sent successfully');
         this.contactForm.reset();
+        this.loading = false;
       } catch (error: any) {
         this.loading = false;
         console.log('Error sendind message', error);
