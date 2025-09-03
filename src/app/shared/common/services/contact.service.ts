@@ -8,7 +8,11 @@ import { environment } from '@envs/environment';
   providedIn: 'root',
 })
 export class ContactService {
+
+  // Handle environment variables
   private EDGE_FUNCTION_URL = environment.EDGE_FUNCTIONS_URL;
+  private SUPABASE_ANON_KEY = environment.SUPABASE_ANON_KEY;
+  
   // Inject Services
   private http = inject(HttpClient);
 
@@ -21,7 +25,10 @@ export class ContactService {
     message: string;
   }): Observable<Contact> {
     return this.http.post<Contact>(this.EDGE_FUNCTION_URL, payload, {
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Authorization: `Bearer ${this.SUPABASE_ANON_KEY}`,
+      },
     });
   }
 }
