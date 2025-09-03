@@ -7,7 +7,6 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { LoadingComponent } from '@shared/common/loading/loading.component';
 import { ContactService } from '@shared/common/services/contact.service';
 import { firstValueFrom } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
@@ -25,6 +24,7 @@ export class ContactComponent {
   lastname: FormControl;
   phone: FormControl;
   email: FormControl;
+  subject: FormControl;
   message: FormControl;
 
   // Variables
@@ -39,6 +39,7 @@ export class ContactComponent {
     this.lastname = new FormControl('', Validators.required);
     this.phone = new FormControl('', Validators.required);
     this.email = new FormControl('', [Validators.required, Validators.email]);
+    this.subject = new FormControl('', Validators.required);
     this.message = new FormControl('', [
       Validators.required,
       Validators.minLength(10),
@@ -48,6 +49,7 @@ export class ContactComponent {
       lastname: this.lastname,
       phone: this.phone,
       email: this.email,
+      subject: this.subject,
       message: this.message,
     });
   }
@@ -56,10 +58,10 @@ export class ContactComponent {
   async contactMe() {
     this.loading = true;
     if (this.contactForm.valid) {
-      const formData = new FormData();
+      const formValue = this.contactForm.value;
 
       try {
-        await firstValueFrom(this.contactService.sendMessage(formData));
+        await firstValueFrom(this.contactService.sendMessage(formValue));
         this.toastr.success('Message sent successfully');
         this.contactForm.reset();
       } catch (error: any) {

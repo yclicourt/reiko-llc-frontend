@@ -8,14 +8,20 @@ import { environment } from '@envs/environment';
   providedIn: 'root',
 })
 export class ContactService {
-  
-  private readonly CLIENT_URL = environment.CLIENT_URL  
+  private EDGE_FUNCTION_URL = environment.EDGE_FUNCTIONS_URL;
   // Inject Services
   private http = inject(HttpClient);
 
-
-
-  sendMessage(formData: FormData): Observable<Contact> {
-    return this.http.post<Contact>(`${this.CLIENT_URL}/api/send-mail`, formData);
+  sendMessage(payload: {
+    name: string;
+    lastname: string;
+    phone: string;
+    email: string;
+    subject: string;
+    message: string;
+  }): Observable<Contact> {
+    return this.http.post<Contact>(this.EDGE_FUNCTION_URL, payload, {
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
 }
