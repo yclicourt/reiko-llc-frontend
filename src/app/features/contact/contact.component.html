@@ -1,5 +1,5 @@
 <!-- component -->
-<div class="w-full h-screen mt-100 transparent" id="contact">
+<div class="w-full min-h-screen flex items-center justify-center px-6 sm:px-6 lg:px-8 py-20" id="contact">
   <svg
     class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
     aria-hidden="true"
@@ -29,145 +29,139 @@
       fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
     />
   </svg>
-  <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
-    <div class="bg-gray-800 w-full shadow rounded p-8 sm:p-12 -mt-72">
-      <p class="text-3xl font-bold leading-7 text-center text-white">
+    <div class="max-w-4xl w-full bg-gray-800 shadow-lg rounded-xl p-8 sm:p-12">
+      <p class="text-3xl font-bold leading-7 text-center mb-8 text-white">
         Contact me
       </p>
       <form [formGroup]="contactForm">
-        <div class="md:flex items-center mt-12">
-          <div class="w-full md:w-1/2 flex flex-col">
+        <!-- Input Name -->
+        <div class="md:flex items-center mt-8">
+          <div class="relative w-full">
             <label class="font-semibold leading-none text-gray-300">Name</label>
+
+            <span
+              *ngIf="hasErrors('name', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
+            >
+              Name should not be empty
+            </span>
+
             <input
               type="text"
-              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
               placeholder="Name"
               formControlName="name"
-              [ngClass]="{
-                'is-invalid ':
-                  hasErrors('name', 'required') || hasErrors('name', 'name')
-              }"
             />
-            @if (hasErrors('name','required')) {
-
-            <span class="text-red-500 font-sans"
-              >"Name should not be empty"</span
-            >
-            }
           </div>
-          <div class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
+        </div>
+        <!-- Input Lastname -->
+        <div class="md:flex items-center mt-8">
+          <div class="relative w-full">
             <label class="font-semibold leading-none text-gray-300"
               >Lastname</label
             >
-            <input
-              type="email"
-              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded"
-              placeholder="Lastname"
-              formControlName="lastname"
-              [ngClass]="{
-                'is-invalid ':
-                  hasErrors('lastname', 'required') ||
-                  hasErrors('lastname', 'lastname')
-              }"
-            />
-            @if (hasErrors('lastname','required')) {
 
-            <span class="text-red-500 font-sans"
-              >"Lastname should not be empty"</span
+            <span
+              *ngIf="hasErrors('lastname', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
             >
-            }
+              Lastname should not be empty
+            </span>
+
+            <input
+              type="text"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
+              placeholder="LastName"
+              formControlName="lastname"
+            />
           </div>
         </div>
+        <!-- Input Email -->
         <div class="md:flex items-center mt-8">
-          <div class="w-full flex flex-col">
+          <div class="relative w-full">
             <label class="font-semibold leading-none text-gray-300"
               >Email</label
             >
+
+            <span
+              *ngIf="hasErrors('email', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
+            >
+              Email should not be empty
+            </span>
+
             <input
-              type="text"
-              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded"
+              type="email"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
               placeholder="Email"
               formControlName="email"
-              [ngClass]="{
-                'is-invalid ':
-                  hasErrors('email', 'required') || hasErrors('email', 'email')
-              }"
             />
-            @if (hasErrors('email','required')) {
-
-            <span class="text-red-500 font-sans"
-              >"Email should not be empty"</span
-            >
-            }
           </div>
         </div>
+        <!-- Input Phone -->
         <div class="md:flex items-center mt-8">
-          <div class="w-full flex flex-col">
-            <label class="font-semibold leading-none text-gray-300"
-              >Phone</label
+          <div class="relative w-full">
+            <label class="font-semibold leading-none text-gray-300">Phone</label>
+
+            <span
+              *ngIf="hasErrors('phone', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
             >
+              Phone should not be empty
+            </span>
+
             <input
               type="text"
-              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
               placeholder="Phone"
               formControlName="phone"
-              [ngClass]="{
-                'is-invalid ':
-                  hasErrors('phone', 'required') || hasErrors('phone', 'phone')
-              }"
             />
-            @if (hasErrors('phone','required')) {
-
-            <span class="text-red-500 font-sans"
-              >"Phone should not be empty"</span
-            >
-            }
           </div>
         </div>
+        <!-- Input Subject -->
         <div class="md:flex items-center mt-8">
-          <div class="w-full flex flex-col">
-            <label class="font-semibold leading-none text-gray-300"
-              >Subject</label
+          <div class="relative w-full">
+            <label class="font-semibold leading-none text-gray-300">Subject</label>
+
+            <span
+              *ngIf="hasErrors('subject', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
             >
+              Subject should not be empty
+            </span>
+
             <input
               type="text"
-              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
               placeholder="Subject"
               formControlName="subject"
-              [ngClass]="{
-                'is-invalid ':
-                  hasErrors('subject', 'required') ||
-                  hasErrors('subject', 'subject')
-              }"
             />
-            @if (hasErrors('subject','required')) {
-
-            <span class="text-red-500 font-sans"
-              >"Subject should not be empty"</span
-            >
-            }
           </div>
         </div>
+        <!-- TextArea -->
         <div>
-          <div class="w-full flex flex-col mt-8">
+          <div class="w-full flex flex-col mt-8 relative">
             <label class="font-semibold leading-none text-gray-300"
               >Message</label
             >
+            <span
+              *ngIf="hasErrors('message', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
+            >
+              Message should not be empty
+            </span>
+            <span
+              *ngIf="hasErrors('message', 'minlength')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
+            >
+              Message must be at least 10 characters
+            </span>
             <textarea
               type="text"
-              class="h-40 text-base leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 bg-gray-900 border-0 rounded"
+              class="h-20 text-base leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 bg-gray-900 border-0 rounded"
               placeholder="Insert your message here ....."
               formControlName="message"
             ></textarea>
-            @if (hasErrors('message','required')) {
-            <span class="text-red-500 font-sans"
-              >Message should not be empty</span
-            >
-            } @if (hasErrors('message','minlength')) {
-            <span class="text-red-500 font-sans"
-              >Message must be at least 10 characters</span
-            >
-            }
           </div>
         </div>
         <!-- Loading State -->
@@ -207,5 +201,5 @@
         </div>
       </form>
     </div>
-  </div>
+
 </div>

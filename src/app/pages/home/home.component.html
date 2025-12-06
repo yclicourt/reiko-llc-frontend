@@ -64,11 +64,7 @@
         <div
           class="mx-auto max-w-2xl flex-shrink-0 lg:mx-0 lg:max-w-xl lg:pt-8"
         >
-          <img
-            class="h-35"
-            src="/logo.png"
-            alt="Your Company"
-          />
+          <img class="h-35" src="/logo.png" alt="Your Company" />
           <h1
             class="mt-20 text-5xl font-bold tracking-tight text-white sm:text-6xl"
           >
@@ -92,9 +88,7 @@
             <img
               src="/header_reiko's_llc.jpg"
               alt="App screenshot"
-              width="2200"
-              height="1800"
-              class="w-[45rem] mt-40 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10"
+              class="w-full max-w-[45rem] h-auto mt-40 rounded-md bg-white/5 shadow-2xl ring-1 ring-white/10 object-cover"
             />
           </div>
         </div>
@@ -103,31 +97,31 @@
         <app-services-component />
       </section>
       <section>
-        <app-contact/>
+        <app-contact />
       </section>
       <button
-      *ngIf="showScrollButton"
-      (click)="scrollToTop()"
-      class="fixed bottom-8 right-8 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all duration-300 focus:outline-none transform hover:scale-110 animate-bounce"
-    >
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
+        *ngIf="showScrollButton"
+        (click)="scrollToTop()"
+        class="fixed bottom-8 right-8 p-3 bg-blue-600 text-white rounded-full shadow-lg hover:bg-blue-500 transition-all duration-300 focus:outline-none transform hover:scale-110 animate-bounce"
       >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M5 10l7-7m0 0l7 7m-7-7v18"
-        />
-      </svg>
-    </button>
-    <section>
-      <app-footer/>
-    </section>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          />
+        </svg>
+      </button>
+      <section>
+        <app-footer />
+      </section>
     </div>
   </section>
 </main>
