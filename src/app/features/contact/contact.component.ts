@@ -7,7 +7,7 @@ import {
   FormGroup,
 } from '@angular/forms';
 import { CommonModule } from '@angular/common';
-import { ContactService } from '@shared/common/services/contact.service';
+import { ContactService } from '@shared/common/components/services/contact.service';
 import { firstValueFrom } from 'rxjs';
 import { ToastrService } from 'ngx-toastr';
 @Component({
