@@ -1,9 +1,12 @@
 import { Component } from '@angular/core';
+import { FooterComponent } from "@shared/common/components/footer/footer.component";
+import { CarouselImagesStorageComponent } from "@shared/common/components/carousel-images-storage/carousel-images-storage.component";
+import { ButtonUpComponent } from "@shared/common/components/button-up/button-up.component";
 
 @Component({
   selector: 'app-storage',
   standalone: true,
-  imports: [],
+  imports: [FooterComponent, CarouselImagesStorageComponent, ButtonUpComponent],
   templateUrl: './storage.component.html',
   styleUrl: './storage.component.css'
 })

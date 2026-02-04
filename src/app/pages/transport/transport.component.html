@@ -1,193 +1,90 @@
-<main>
-  <section>
-    <div
-      class="relative isolate overflow-hidden bg-gray-900 min-h-screen items-start"
-    >
-      <svg
-        class="absolute inset-0 -z-10 h-full w-full stroke-white/10 mask-[radial-gradient(100%_100%_at_top_right,white,transparent)]"
-        aria-hidden="true"
-      >
-        <defs>
-          <pattern
-            id="983e3e4c-de6d-4c3f-8d64-b9761d1534cc"
-            width="200"
-            height="200"
-            x="50%"
-            y="-1"
-            patternUnits="userSpaceOnUse"
+<main class="bg-gray-900 min-h-screen text-white">
+  <header class="relative isolate overflow-hidden">
+    <app-carousel-images></app-carousel-images>
+  </header>
+
+  <section class="py-24 bg-gray-800/50">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="grid grid-cols-1 gap-12 lg:grid-cols-2 items-center">
+        <div class="relative group">
+          <div
+            class="absolute -inset-0.5 bg-linear-to-r from-indigo-500 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"
+          ></div>
+          <div
+            class="relative flex items-center gap-x-6 rounded-2xl bg-gray-900 p-8 ring-1 ring-white/10 backdrop-blur-md"
           >
-            <path d="M.5 200V.5H200" fill="none" />
-          </pattern>
-        </defs>
-        <svg x="50%" y="-1" class="overflow-visible fill-gray-800/20">
-          <path
-            d="M-200 0h201v201h-201Z M600 0h201v201h-201Z M-400 600h201v201h-201Z M200 800h201v201h-201Z"
-            stroke-width="0"
-          />
-        </svg>
-        <rect
-          width="100%"
-          height="100%"
-          stroke-width="0"
-          fill="url(#983e3e4c-de6d-4c3f-8d64-b9761d1534cc)"
-        />
-      </svg>
-      <div
-        class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
-        aria-hidden="true"
-      >
-        <div
-          class="aspect-1108/632 w-277 bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-          style="
-            clip-path: polygon(
-              73.6% 51.7%,
-              91.7% 11.8%,
-              100% 46.4%,
-              97.4% 82.2%,
-              92.5% 84.9%,
-              75.7% 64%,
-              55.3% 47.5%,
-              46.5% 49.4%,
-              45% 62.9%,
-              50.3% 87.2%,
-              21.3% 64.1%,
-              0.1% 100%,
-              5.4% 51.1%,
-              21.4% 63.9%,
-              58.9% 0.2%,
-              73.6% 51.7%
-            );
-          "
-        ></div>
-      </div>
-      <!-- <div class="w-full pl-50 pt-6">
-        <img class="h-35 bg-transparent" src="/logo.png" alt="Your Company" />
-      </div> -->
-      <div
-        class="absolute left-[calc(50%-4rem)] top-10 -z-10 transform-gpu blur-3xl sm:left-[calc(50%-18rem)] lg:left-48 lg:top-[calc(50%-30rem)] xl:left-[calc(50%-24rem)]"
-        aria-hidden="true"
-      >
-        <div
-          class="aspect-1108/632 w-277 bg-linear-to-r from-[#80caff] to-[#4f46e5] opacity-20"
-          style="
-            clip-path: polygon(
-              73.6% 51.7%,
-              91.7% 11.8%,
-              100% 46.4%,
-              97.4% 82.2%,
-              92.5% 84.9%,
-              75.7% 64%,
-              55.3% 47.5%,
-              46.5% 49.4%,
-              45% 62.9%,
-              50.3% 87.2%,
-              21.3% 64.1%,
-              0.1% 100%,
-              5.4% 51.1%,
-              21.4% 63.9%,
-              58.9% 0.2%,
-              73.6% 51.7%
-            );
-          "
-        ></div>
-      </div>
-      <section class="mt-150 w-full">
-        <app-carousel-images></app-carousel-images>
-      </section>
-      <!-- -->
-      <section class="mx-auto px-6 lg:px-8 w-full">
-        <div class="grid grid-cols-1 gap-8 lg:grid-cols-2 items-center">
-          <div class="relative group">
             <div
-              class="absolute -inset-0.5 bg-linear-to-r from-indigo-500 to-cyan-500 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000 group-hover:duration-200"
-            ></div>
-
-            <div
-              class="relative flex items-center gap-x-6 rounded-2xl bg-gray-900/50 p-8 ring-1 ring-white/10 backdrop-blur-md"
+              class="flex h-16 w-16 flex-none items-center justify-center rounded-lg bg-indigo-500/10 text-indigo-400"
             >
-              <div
-                class="flex h-16 w-16 flex-none items-center justify-center rounded-lg bg-indigo-500/10 ring-1 ring-indigo-500/20 text-white"
-              >
-                <!-- icon -->
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="3rem"
-                  height="3rem"
-                  fill="currentColor"
-                  viewBox="0 0 16 16"
-                >
-                  <path
-                    d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z"
-                  />
-                </svg>
-              </div>
-              <div>
-                <h3 class="text-lg font-semibold leading-7 text-white">
-                  Transport
-                </h3>
-                <p class="mt-2 text-sm leading-6 text-gray-400">
-                  Reliable end-to-end transportation solutions. We ensure your
-                  goods reach their destination safely and on time, anywhere in
-                  the world.
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="lg:pl-8">
-            <!-- <figure class="relative">
               <svg
-                class="absolute -top-4 -left-4 h-12 w-12 text-white/5"
+                xmlns="http://www.w3.org/2000/svg"
+                width="32"
+                height="32"
                 fill="currentColor"
-                viewBox="0 0 32 32"
-                aria-hidden="true"
+                viewBox="0 0 16 16"
               >
                 <path
-                  d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z"
+                  d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7z"
                 />
               </svg>
-
-              <blockquote
-                class="text-xl font-medium leading-8 text-white sm:text-2xl sm:leading-9"
-              >
-                <p>
-                  
-                </p>
-              </blockquote>
-
-            </figure> -->
+            </div>
             <div>
-              <h3 class="text-xl font-semibold leading-7 text-white mb-4">
-                Servicio de Transporte
-              </h3>
-
-              <ul class="space-y-3 text-sm leading-6 text-gray-300">
-                <li class="flex gap-x-3">
-                  <span class="text-indigo-400 font-bold">•</span>
-                  <span
-                    >Cobertura nacional e internacional con rutas optimizadas
-                    por IA.</span
-                  >
-                </li>
-                <li class="flex gap-x-3">
-                  <span class="text-indigo-400 font-bold">•</span>
-                  <span
-                    >Monitoreo de carga en tiempo real las 24 horas del
-                    día.</span
-                  >
-                </li>
-                <li class="flex gap-x-3">
-                  <span class="text-indigo-400 font-bold">•</span>
-                  <span
-                    >Flota moderna con bajas emisiones para un transporte
-                    sostenible.</span
-                  >
-                </li>
-              </ul>
+              <h3 class="text-xl font-bold">Logistics Transport</h3>
+              <p class="mt-2 text-gray-400">End-to-end integrated solutions</p>
             </div>
           </div>
         </div>
-      </section>
+
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight sm:text-4xl mb-6">
+            Our Commitment
+          </h2>
+          <ul class="space-y-4 text-gray-300">
+            <li class="flex gap-x-3">
+              <span class="text-indigo-400">✓</span>
+              Optimized national and international coverage.
+            </li>
+            <li class="flex gap-x-3">
+              <span class="text-indigo-400">✓</span> 24/7 real-time load
+              monitoring.
+            </li>
+            <li class="flex gap-x-3">
+              <span class="text-indigo-400">✓</span> Modern, low-emission fleet
+              for sustainable transport.
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
+
+  <section class="py-24">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <h2 class="text-base font-semibold leading-7 text-indigo-400">
+        Why choose us?
+      </h2>
+      <p class="mt-2 text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Efficiency in every kilometer
+      </p>
+
+      <div class="mt-16 grid grid-cols-1 gap-8 sm:grid-cols-3">
+        <div class="flex flex-col gap-y-4 border-l border-white/10 pl-6">
+          <dt class="text-sm leading-6 text-gray-400">Deliveries on time</dt>
+          <dd class="text-3xl font-semibold tracking-tight text-white">
+            99.9%
+          </dd>
+        </div>
+        <div class="flex flex-col gap-y-4 border-l border-white/10 pl-6">
+          <dt class="text-sm leading-6 text-gray-400">Countries covered</dt>
+          <dd class="text-3xl font-semibold tracking-tight text-white">25+</dd>
+        </div>
+        <div class="flex flex-col gap-y-4 border-l border-white/10 pl-6">
+          <dt class="text-sm leading-6 text-gray-400">Annual kilometers</dt>
+          <dd class="text-3xl font-semibold tracking-tight text-white">1.2M</dd>
+        </div>
+      </div>
+    </div>
+  </section>
+  <app-button-up></app-button-up>
+  <app-footer></app-footer>
 </main>
