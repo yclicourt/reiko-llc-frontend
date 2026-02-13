@@ -1,7 +1,7 @@
 <!-- component -->
 <div class="w-full min-h-screen flex items-center justify-center px-6 sm:px-6 lg:px-8 py-20" id="contact">
   <svg
-    class="absolute inset-0 -z-10 h-full w-full stroke-white/10 [mask-image:radial-gradient(100%_100%_at_top_right,white,transparent)]"
+    class="absolute inset-0 -z-10 h-full w-full stroke-white/10 mask-[radial-gradient(100%_100%_at_top_right,white,transparent)]"
     aria-hidden="true"
   >
     <defs>
@@ -115,6 +115,27 @@
               class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
               placeholder="Phone"
               formControlName="phone"
+            />
+          </div>
+        </div>
+        <!-- Input Service -->
+        <div class="md:flex items-center mt-8">
+          <div class="relative w-full">
+            <label class="font-semibold leading-none text-gray-300">Service</label>
+
+            <span
+              *ngIf="hasErrors('service', 'required')"
+              class="absolute top-0 right-0 text-red-500 text-sm"
+            >
+              Service should not be empty
+            </span>
+
+            <input
+              type="text"
+              class="leading-none text-gray-500 p-3 focus:outline-none focus:ring-2 focus:ring-blue-700 mt-4 border-0 bg-gray-900 rounded w-full"
+              placeholder="Service"
+              [ngModel]="serviceInput"
+              formControlName="service"
             />
           </div>
         </div>

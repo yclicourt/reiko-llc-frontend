@@ -1,65 +1,74 @@
-<p>navbar works!</p>
+<nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+  <!-- Logo -->
+  <a routerLink="/" class="flex items-center gap-2">
+    <img src="/favicon.svg" alt="REIKO'S LLC" class="h-9 w-auto" />
+    <span class="text-white font-semibold tracking-wide">REIKO'S LLC</span>
+  </a>
 
-<header
-  class="fixed top-0 left-0 w-full z-50 bg-[#0b1220]/80 backdrop-blur-md border-b border-white/5"
->
-  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-
-    <!-- Logo -->
-    <a routerLink="/" class="flex items-center gap-2">
-      <img src="assets/logo.png" alt="REIKO'S LLC" class="h-9 w-auto" />
-      <span class="text-white font-semibold tracking-wide">REIKO'S LLC</span>
-    </a>
-
-    <!-- Links -->
-    <ul class="hidden md:flex items-center gap-8 text-sm text-gray-300">
-      <li>
-        <a routerLink="/" routerLinkActive="text-white"
-           [routerLinkActiveOptions]="{ exact: true }"
-           class="hover:text-white transition">
-          Home
-        </a>
-      </li>
-
-      <li>
-        <a routerLink="/transport" routerLinkActive="text-white"
-           class="hover:text-white transition">
-          Transport
-        </a>
-      </li>
-
-      <li>
-        <a routerLink="/storage" routerLinkActive="text-white"
-           class="hover:text-white transition">
-          Storage
-        </a>
-      </li>
-
-      <li>
-        <a routerLink="/logistic" routerLinkActive="text-white"
-           class="hover:text-white transition">
-          Logistic
-        </a>
-      </li>
-
-      <li>
-        <a routerLink="/contact" routerLinkActive="text-white"
-           class="hover:text-white transition">
-          Contact
-        </a>
-      </li>
-    </ul>
-
-    <!-- CTA dinámico -->
-    <div class="hidden md:block">
+  <!-- Links -->
+  <ul class="hidden md:flex items-center gap-8 text-sm text-gray-300">
+    <li>
       <a
-        [routerLink]="cta.link"
-        [queryParams]="cta.queryParams"
-        class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2 rounded-lg transition"
+        routerLink="/"
+        routerLinkActive="text-white"
+        [routerLinkActiveOptions]="{ exact: true }"
+        class="hover:text-white transition"
       >
-        {{ cta.text }}
+        Home
       </a>
-    </div>
+    </li>
 
-  </nav>
-</header>
+    <li>
+      <a
+        routerLink="/transport"
+        routerLinkActive="text-white"
+        class="hover:text-white transition"
+      >
+        Transport
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="/storage"
+        routerLinkActive="text-white"
+        class="hover:text-white transition"
+      >
+        Storage
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="/logistic"
+        routerLinkActive="text-white"
+        class="hover:text-white transition"
+      >
+        Logistic
+      </a>
+    </li>
+
+    <li>
+      <a
+        routerLink="/"
+        fragment="contact"
+        routerLinkActive="text-white"
+        class="hover:text-white transition"
+      >
+        Contact
+      </a>
+    </li>
+  </ul>
+
+  <!-- CTA dinámico -->
+  <div class="hidden md:block">
+    <a
+      [routerLink]="cta.link"
+      [queryParams]="cta.queryParams"
+      fragment="contact"
+      class="bg-blue-600 hover:bg-blue-700 text-white text-sm font-medium px-5 py-2 rounded-lg transition"
+    >
+      {{ cta.text }}
+    </a>
+  </div>
+</nav>

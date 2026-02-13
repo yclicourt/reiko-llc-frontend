@@ -1,6 +1,7 @@
 <main>
   <section>
-    <div class="relative isolate overflow-hidden bg-gray-900">
+    <div class="relative isolate overflow-hidden bg-gray-900 min-h-screen">
+      <app-navbar></app-navbar> 
       <svg
         class="absolute inset-0 -z-10 h-full w-full stroke-white/10 mask-[radial-gradient(100%_100%_at_top_right,white,transparent)]"
         aria-hidden="true"
@@ -94,7 +95,7 @@
       <section>
         <app-services-component />
       </section>
-      <section>
+      <section id="contact">
         <app-contact />
       </section>
       <app-button-up></app-button-up>

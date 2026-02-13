@@ -1,17 +1,3 @@
-/*import { Component } from '@angular/core';
-
-@Component({
-  selector: 'app-navbar',
-  standalone: true,
-  imports: [],
-  templateUrl: './navbar.component.html',
-  styleUrl: './navbar.component.css'
-})
-export class NavbarComponent {
-
-}*/
-
-
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
@@ -26,7 +12,7 @@ type CtaConfig = { text: string; link: any[]; queryParams?: Record<string, strin
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
-  cta: CtaConfig = { text: 'Request Service', link: ['/contact'] };
+  cta: CtaConfig = { text: 'Request Service', link: ['/'] };
 
   constructor(private router: Router) {
     // set inicial
@@ -44,8 +30,8 @@ export class NavbarComponent {
     if (clean.startsWith('/transport')) {
       this.cta = {
         text: 'Request Transport Service',
-        link: ['/contact'],
-        queryParams: { service: 'transport' },
+        link: ['/'],
+        queryParams: { service: 'Transport' },
       };
       return;
     }
@@ -53,8 +39,8 @@ export class NavbarComponent {
     if (clean.startsWith('/storage')) {
       this.cta = {
         text: 'Request Storage Service',
-        link: ['/contact'],
-        queryParams: { service: 'storage' },
+        link: ['/'],
+        queryParams: { service: 'Storage' },
       };
       return;
     }
@@ -62,12 +48,12 @@ export class NavbarComponent {
     if (clean.startsWith('/logistic')) {
       this.cta = {
         text: 'Request Logistics Service',
-        link: ['/contact'],
-        queryParams: { service: 'logistic' },
+        link: ['/'],
+        queryParams: { service: 'Logistic' },
       };
       return;
     }
 
-    this.cta = { text: 'Request Service', link: ['/contact'] };
+    this.cta = { text: 'Request Service', link: ['/'] };
   }
 }

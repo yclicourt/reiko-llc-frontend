@@ -4,6 +4,7 @@ import { ServicesComponentComponent } from '@components/services-component/servi
 import { FooterComponent } from '@shared/common/components/footer/footer.component';
 import { ContactComponent } from '@features/contact/contact.component';
 import { ButtonUpComponent } from '@shared/common/components/button-up/button-up.component';
+import { NavbarComponent } from "@shared/navbar/navbar.component";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +15,8 @@ import { ButtonUpComponent } from '@shared/common/components/button-up/button-up
     FooterComponent,
     ContactComponent,
     ButtonUpComponent,
-  ],
+    NavbarComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css',
 })
