@@ -4,5 +4,5 @@ export const environment = {
   EDGE_FUNCTIONS_URL:
     'https://dpezgmyapqspnatzwdmo.supabase.co/functions/v1/resend-email',
   SUPABASE_ANON_KEY:
-    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmc2hjbnBqbnRuaG1zb2hoenF1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY4NjE1MzcsImV4cCI6MjA3MjQzNzUzN30.Bwmi-4o3bs8we02V06iCmCOuF57ESMtbXhs7XBAiFVk',
+    'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImRwZXpnbXlhcHFzcG5hdHp3ZG1vIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzA5NDA0MzYsImV4cCI6MjA4NjUxNjQzNn0.xQ-hj7IBcUYyeoxv0ToCU6g6LQezEq6CEe0LxtGXr-Y',
 };
