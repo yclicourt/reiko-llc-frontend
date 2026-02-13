@@ -1,6 +1,6 @@
 export const environment = {
   production: true,
-  RESEND_API_KEY: 're_37NhL8GG_L7uGwLiet9jt3FUqhpkrnDt3',
+  RESEND_API_KEY: 're_HeSRAMH6_HYahngzXoyi2zonF19wWAFJU',
   EDGE_FUNCTIONS_URL:
     'https://dpezgmyapqspnatzwdmo.supabase.co/functions/v1/resend-email',
   SUPABASE_ANON_KEY:
