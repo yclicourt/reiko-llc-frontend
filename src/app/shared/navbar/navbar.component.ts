@@ -1,9 +1,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NavigationEnd, Router, RouterLink, RouterLinkActive } from '@angular/router';
+import {
+  NavigationEnd,
+  Router,
+  RouterLink,
+  RouterLinkActive,
+} from '@angular/router';
 import { filter } from 'rxjs/operators';
+import { animate, style, transition, trigger } from '@angular/animations';
 
-type CtaConfig = { text: string; link: any[]; queryParams?: Record<string, string> };
+type CtaConfig = {
+  text: string;
+  link: any[];
+  queryParams?: Record<string, string>;
+};
 
 @Component({
   selector: 'app-navbar',
@@ -12,6 +22,7 @@ type CtaConfig = { text: string; link: any[]; queryParams?: Record<string, strin
   templateUrl: './navbar.component.html',
 })
 export class NavbarComponent {
+  isMenuOpen = false;
   cta: CtaConfig = { text: 'Request Service', link: ['/'] };
 
   constructor(private router: Router) {

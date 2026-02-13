@@ -60,6 +60,29 @@
     </li>
   </ul>
 
+  <!-- Boton Hamburguesa para vista mobile -->
+  <button
+    (click)="isMenuOpen = !isMenuOpen"
+    class="md:hidden text-gray-300 hover:text-white focus:outline-none"
+  >
+    <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        *ngIf="!isMenuOpen"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7"
+      />
+      <path
+        *ngIf="isMenuOpen"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M6 18L18 6M6 6l12 12"
+      />
+    </svg>
+  </button>
+
   <!-- CTA dinámico -->
   <div class="hidden md:block">
     <a
@@ -72,3 +95,17 @@
     </a>
   </div>
 </nav>
+
+<!-- Menu Mobile(Dropdown) -->
+<div 
+  [class.hidden]="!isMenuOpen" 
+  class="md:hidden bg-gray-900 px-6 py-4 space-y-2 border-t border-gray-800"
+>
+  <a routerLink="/" (click)="isMenuOpen = false" class="block text-gray-300 py-2">Home</a>
+  <a routerLink="/transport" (click)="isMenuOpen = false" class="block text-gray-300 py-2">Transport</a>
+  <a routerLink="/storage" (click)="isMenuOpen = false" class="block text-gray-300 py-2">Storage</a>
+  <a routerLink="/logistic" (click)="isMenuOpen = false" class="block text-gray-300 py-2">Logistic</a>
+  <a [routerLink]="cta.link" (click)="isMenuOpen = false" class="block bg-blue-600 text-center text-white py-2 rounded-lg mt-4">
+    {{ cta.text }}
+  </a>
+</div>
